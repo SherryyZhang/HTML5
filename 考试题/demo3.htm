@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>复习题3</title>
+	<style>
+		#div2 {
+		width:300px;
+		height:300px;
+		border:2px red solid;
+		
+		}
+	</style>
+</head>
+
+<body>
+	<input type="button" value="测试" onclick="onpop()">
+	
+	<p id="p1" style="color:orange;">javascript是流行的脚本语言</p>
+	<span style="color:orange;">jQuery是 一个JavaScript库</span>
+	<br>
+	<span style="color:orange;">jQuery极大地简化了JavaScript编程</span>
+	
+	<div id="div1">
+		<p id="p2" style="color:red;">这个一个段落</p>
+	</div>
+	<div id="div2" onmousemove="msMove(this)" onmouseout="msOut(this)" onmouseup="msUp(this)" onmousedown="msDown(this)">000</div>
+	<div id="div3" style="color:green;">
+		<p>HTML DOM 定义了访问和操作HTML文档的标准方法</p>
+		<p>DOM将HTML文档表达为树结构</p>
+	</div>
+	<script>
+	
+		function onpop() {
+		alert("培训中心");
+		}
+		
+		document.writeln('<br/>'+document.getElementById("p1").innerHTML);
+		var value = document.getElementsByTagName("span");
+		document.writeln('<br/>'+value[0].innerText);
+		console.log(value);
+		
+		var param = document.createElement("p");
+		var node = document.createTextNode("0000000");
+		param.appendChild(node);
+		var elem = document.getElementById("div1");
+		elem.appendChild(param);
+		
+		var node1 = document.getElementById("div3").getElementsByTagName("p");
+		document.write("第一段落内容"+node1[0].firstChild.nodeValue+
+		"<br>元素个数"+node1.length+"<br>父元素"+node1[0].parentNode.nodeName);
+		console.log(node1);
+		
+		function msMove(d) {
+		d.innerHTML="move";
+		}
+		function msOut(d) {
+		d.innerHTML="out";
+		}
+		function msUp(d) {
+		d.innerHTML="up";
+		}
+		function msDown(d) {
+		d.style.background='#c0c0c0';
+		d.innerHTML="down";
+		}
+	</script>
+</body>
+</html>
